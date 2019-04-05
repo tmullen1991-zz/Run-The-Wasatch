@@ -1,0 +1,25 @@
+{
+  "name": "run-the-wasatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmullen1991/Run-The-Wasatch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmullen1991/Run-The-Wasatch/issues"
+  },
+  "homepage": "https://github.com/tmullen1991/Run-The-Wasatch#readme"
+}
