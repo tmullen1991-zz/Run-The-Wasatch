@@ -1,3 +1,3 @@
 module.exports = {
-    // modelName: require("./modelFileName")
-  };
+  Trail: require("./trail")
+};
