@@ -1,7 +1,7 @@
 const router = require("express").Router();
-//const apiRoutes = require("./apiRouteFileName");
+const trailRoutes = require("./trails");
 
 // Book routes
-// router.use(apiRoutes);
+router.use(trailRoutes);
 
 module.exports = router;
