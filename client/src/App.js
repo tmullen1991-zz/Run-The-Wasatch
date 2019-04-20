@@ -5,11 +5,12 @@ import './App.css';
 import Auth from './Auth/Auth.js';
 import Callback from "./pages/Callback";
 import history from "./history"
+import API from "./utils/api";
+import Map from "./components/map"
 
 const auth = new Auth();
 
 if (!auth.isAuthenticated() && window.location.pathname !== "/callback"){
-  debugger;
   auth.login();
 }
 
@@ -21,9 +22,15 @@ const handleAuthentication = ({location}) => {
   }
 }
 
+import React, { Component } from "react";
 
 
 class App extends Component {
+ 
+  componentDidMount() {
+    
+  }
+ 
   render() {
     return (
       <Router history={history}>
@@ -35,6 +42,7 @@ class App extends Component {
           }}/>
         </div>
       </Router>
+
     );
   }
 }
