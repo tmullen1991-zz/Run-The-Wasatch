@@ -1,7 +1,29 @@
-import React, { Component } from "react";
+import { Router, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import Home from "./pages/Home"
+import './App.css';
+import Auth from './Auth/Auth.js';
+import Callback from "./pages/Callback";
+import history from "./history"
 import API from "./utils/api";
 import Map from "./components/map"
-import "./App.css";
+
+const auth = new Auth();
+
+if (!auth.isAuthenticated() && window.location.pathname !== "/callback"){
+  auth.login();
+}
+
+
+
+const handleAuthentication = ({location}) => {
+  if (/access_token|id_token|error/.test(location.hash)) {
+    auth.handleAuthentication();
+  }
+}
+
+import React, { Component } from "react";
+
 
 class App extends Component {
  
@@ -11,10 +33,16 @@ class App extends Component {
  
   render() {
     return (
-      <div>
-        it works!!
-        <Map />
-      </div>
+      <Router history={history}>
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/callback" render={(props) => {
+            handleAuthentication(props);
+            return <Callback {...props} /> 
+          }}/>
+        </div>
+      </Router>
+
     );
   }
 }
