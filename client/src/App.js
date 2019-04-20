@@ -1,5 +1,5 @@
-import { Router, Route } from 'react-router-dom';
 import React, { Component } from 'react';
+import { Router, Route } from 'react-router-dom';
 import Home from "./pages/Home"
 import './App.css';
 import Auth from './Auth/Auth.js';
@@ -14,15 +14,11 @@ if (!auth.isAuthenticated() && window.location.pathname !== "/callback"){
   auth.login();
 }
 
-
-
 const handleAuthentication = ({location}) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
 }
-
-import React, { Component } from "react";
 
 
 class App extends Component {

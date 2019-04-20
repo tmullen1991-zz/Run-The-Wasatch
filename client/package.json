@@ -4,6 +4,7 @@
   "proxy": "http://localhost:3001/",
   "private": true,
   "dependencies": {
+    "auth0-js": "^9.10.2",
     "dotenv": "^7.0.0",
     "google-map-react": "^1.1.4",
     "mapbox-gl": "^0.53.1",
