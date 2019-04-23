@@ -1,0 +1,39 @@
+/* 
+Critical css necessary for styling the loading spinner, 
+which is visible immediately on page access.
+It is loaded before js modules from bundle.js, which include react components and style, and immediately after index.html.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Playfair+Display');
+
+body {
+  background-color: #191919;
+}
+
+.loader {
+  position: fixed;
+  top: calc(50% - 5em);
+  left: calc(50% - 5em);
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.loader img {
+  width: 10em;
+  height: 10em;
+  animation: rotation 3s infinite linear;
+  z-index: -1;
+}
+
+@keyframes rotation{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader--hide {
+  opacity: 0;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box } from '@smooth-ui/core-sc';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
-import { Logo } from '.../index';
-import * as Styled from '../Navigation.style';
+import { Logo } from '../index';
+import * as Styled from './Navigation.style';
 
 const Navigation = ({ location }) => (
   <Box
@@ -37,7 +37,7 @@ const Navigation = ({ location }) => (
         page={location.pathname}
       >
         <li>
-          <Link 
+          <Link
             to="/about"
             aria-label="About page"
           >
@@ -50,7 +50,7 @@ const Navigation = ({ location }) => (
           </Link>
         </li>
         <li>
-          <Link 
+          <Link
             to="/trails"
             aria-label="Trails page"
           >
@@ -58,7 +58,20 @@ const Navigation = ({ location }) => (
               className="nav-link_content"
               tabIndex="-1"
             >
-              Trails  
+              Trails
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/map"
+            aria-label="Trails page"
+          >
+            <span
+              className="nav-link_content"
+              tabIndex="-1"
+            >
+              Map
             </span>
           </Link>
         </li>

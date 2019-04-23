@@ -48,9 +48,6 @@ const Home = () => (
               <span>
                 Wranglers
               </span>
-              <span>
-                Lovers
-              </span>
 
             </TextLoop>&nbsp;
             <br className="break-small"/>
