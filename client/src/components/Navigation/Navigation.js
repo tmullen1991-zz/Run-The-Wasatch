@@ -22,12 +22,7 @@ const Navigation = ({ location }) => (
         alignItems="center"
         p="10px 0 10px 10px"
       >
-        <Styled.LogoLink to="/" aria-label="Home page">
-          <span className="logo-link_content" tabIndex="-1">
-            <Logo />
-          </span>
-        </Styled.LogoLink>
-        <Styled.NavList page={location.pathname}>
+       
           <li>
             <Link to="/about" aria-label="About page">
               <span className="nav-link_content" tabIndex="-1">
@@ -49,7 +44,7 @@ const Navigation = ({ location }) => (
               </span>
             </Link>
           </li>
-        </Styled.NavList>
+       
       </Box>
     </Box>
   
