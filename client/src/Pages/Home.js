@@ -1,8 +1,11 @@
 import React from "react";
+import Map from "../components/Map"
 
 function Home() {
     return (
-        <div></div>
+        <div>
+            <Map/>
+        </div>
     )
 }
 

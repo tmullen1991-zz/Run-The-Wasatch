@@ -7,10 +7,12 @@ module.exports = {
   findAll: function() {
     db.Trail.find({})
       .then(data => {
-        //res.json(data);
+        console.log("request sent")
+        res.json(data)
       })
       .catch(err => {
-        res.status(422).json(err);
+        //res.status(422).json(err);
+        console.log(err)
       });
   },
   getTrailInfo: function(req, res) {
