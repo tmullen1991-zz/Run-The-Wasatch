@@ -69,8 +69,24 @@ export const NavList = styled.ul`
         }};
       }
     }
+    :nth-child(3) {
+      a {
+        color: ${props => props.theme.navLinkColor};
+        
+        ${props => {
+            return (
+              props.page === '/map' &&
+                css`
+                  color: turquoise;
+                  -webkit-text-stroke: 1px turquoise;
+                `
+            )
+        }};
+      }
+    }
     :nth-child(1),
-    :nth-child(2) {
+    :nth-child(2),
+    :nth-child(3) {
       a {
         :hover {
           color: turquoise;
