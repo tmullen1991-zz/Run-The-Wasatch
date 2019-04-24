@@ -114,6 +114,7 @@ const Home = () => (
 
 
         </Box>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/232389966892330/" data-width="400" data-show-social-context="true" data-show-metadata="false"></div>
       </Col>
     </Row>
   </React.Fragment>  
