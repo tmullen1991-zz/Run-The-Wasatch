@@ -4,15 +4,13 @@ const apiKey = process.env.TRAIL_API_KEY;
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function() {
+  findAll: function(req, res) {
     db.Trail.find({})
       .then(data => {
-        console.log("request sent")
         res.json(data)
       })
       .catch(err => {
-        //res.status(422).json(err);
-        console.log(err)
+        res.status(422).json(err);
       });
   },
   getTrailInfo: function(req, res) {
