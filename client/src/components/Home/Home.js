@@ -3,7 +3,7 @@ import { Box, Row, Col } from '@smooth-ui/core-sc';
 import TextLoop from 'react-text-loop';
 
 import * as Styled from './Home.style';
-import { Facebook } from '../index';
+import  Facebook  from '../Social/Facebook';
 
 const Home = () => (
   <React.Fragment>  

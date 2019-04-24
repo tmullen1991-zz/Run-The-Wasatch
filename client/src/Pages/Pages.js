@@ -3,7 +3,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import * as Styled from './Pages.style';
-import { Home, About, Map , Trails } from '../index';
+import Home from "../components/Home/Home"
+import About from "../components/About/About"
+import Map from "../components/Map"
+import Trails from "../components/Trails/Trails"
 
 class Pages extends Component {
   componentDidUpdate() {
