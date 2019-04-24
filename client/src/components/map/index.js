@@ -5,7 +5,7 @@ require('dotenv').config()
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
  
-class SimpleMap extends Component {
+class App extends Component {
   static defaultProps = {
     center: {
       lat: 40.7608,
@@ -34,7 +34,7 @@ class SimpleMap extends Component {
   }
 }
  
-export default SimpleMap;
+export default App;
 // make this an onClick event to load current trail data from Trail project API, send trail id
  /*handleCurrentConditions= event => {
   event.preventDefault();
