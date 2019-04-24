@@ -42,7 +42,7 @@ const About = () => (
             <Styled.Paragraph>
 
               Adam: Team Lead / Frontend
-              Tom: Backend / Maps / QA
+              Tom: Backend / Maps / Dev Ops
               Abram: Authentication
               
             </Styled.Paragraph>
