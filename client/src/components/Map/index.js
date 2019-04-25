@@ -1,50 +1,62 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-require('dotenv').config()
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
+import API from "../../utils/api";
+import Marker from "../Marker";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
- 
 class App extends Component {
-  static defaultProps = {
+  state = {
+    trails: [],
     center: {
-      lat: 40.7608,
-      lng: -111.8910
+      lat: 40.709,
+      lng: -111.799
     },
     zoom: 11
   };
+  componentDidMount() {
+    this.loadTrails();
+  }
+
+  loadTrails = () => {
+    API.getTrails()
+      .then(res => {
+        this.setState({ trails: res.data });
+      })
+      .catch(err => console.log(err));
+  };
+
  
   render() {
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '500px', width: '500px' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={40.7608}
-            lng={-111.891}
-            text="My Marker"
-          />
-        </GoogleMapReact>
+      <div>
+        {this.state.trails.length > 0 ? (
+           // Important! Always set the container height explicitly
+          <div style={{ height: "100vh", width: "100%" }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: "AIzaSyBVHFnx-SjK9T1d8meeTg0ScKAhxjVaqu0"
+              }}
+              defaultCenter={this.state.center}
+              defaultZoom={this.state.zoom}        
+            >
+              {this.state.trails.map(trail => {
+                return (
+                  <Marker
+                    key={trail.name}
+                    lat={trail.latitude}
+                    lng={trail.longitude}
+                    text={trail.name}
+                  />
+                );
+              })}
+            </GoogleMapReact>
+          </div>
+        ) : (
+          false
+        )}
       </div>
+     
     );
   }
 }
- 
+
 export default App;
-// make this an onClick event to load current trail data from Trail project API, send trail id
- /*handleCurrentConditions= event => {
-  event.preventDefault();
-  const trailId = event.target.id;
-  API.getTrailInfo(trailId)
-    .then(res => {
-      console.log(res.data.trails[0])
-    })
-    .catch(err => {
-      console.log(err);
-    });
-    <a href="/" id="7002449"onClick={this.handleCurrentConditions}>Click</a>
-};*/
