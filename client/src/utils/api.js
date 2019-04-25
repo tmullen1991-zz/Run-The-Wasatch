@@ -8,5 +8,9 @@ export default {
   // use Trail Project trailId, not database id
   getTrailInfo: function(trailId) {
     return axios.get("api/trail_info", { params: { q: trailId } });
+  },
+  // get 10 high reated trails
+  loadTopTrails: function(){
+    return axios.get("api/top_trails");
   }
 };

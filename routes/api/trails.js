@@ -6,4 +6,6 @@ router.route("/map").get(trailController.findAll);
 
 router.route("/trail_info").get(trailController.getTrailInfo);
 
+router.route("/top_trails").get(trailController.getTopTrails);
+
 module.exports = router;

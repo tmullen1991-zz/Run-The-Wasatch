@@ -1,48 +1,60 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import API from "../../utils/api";
-require("dotenv").config();
+import Marker from "../Marker";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class App extends Component {
-
   state = {
     trails: [],
     center: {
-      lat: 40.7608,
-      lng: -111.891
+      lat: 40.709,
+      lng: -111.799
     },
     zoom: 11
   };
   componentDidMount() {
-    this.loadTrails()
+    this.loadTrails();
   }
 
-  loadTrails=() =>{
+  loadTrails = () => {
     API.getTrails()
-    .then(res => {
-      this.setState({ trails: res.data });
-   console.log(this.state.trails[0].latitude)
-   console.log(this.state.trails[0].longitude)
+      .then(res => {
+        this.setState({ trails: res.data });
+      })
+      .catch(err => console.log(err));
+  };
 
-    })
-    .catch(err => console.log(err));
-      
-  }
+ 
   render() {
-
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: "500px", width: "500px" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={"AIzaSyBVHFnx-SjK9T1d8meeTg0ScKAhxjVaqu0"}
-          defaultCenter={this.state.center}
-          defaultZoom={this.state.zoom}
-        >
-        
-          <AnyReactComponent lat={40.7608} lng={-111.891} text="My Marker" />
-        </GoogleMapReact>
+      <div>
+        {this.state.trails.length > 0 ? (
+           // Important! Always set the container height explicitly
+          <div style={{ height: "100vh", width: "100%" }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: "AIzaSyBVHFnx-SjK9T1d8meeTg0ScKAhxjVaqu0"
+              }}
+              defaultCenter={this.state.center}
+              defaultZoom={this.state.zoom}        
+            >
+              {this.state.trails.map(trail => {
+                return (
+                  <Marker
+                    key={trail.name}
+                    lat={trail.latitude}
+                    lng={trail.longitude}
+                    text={trail.name}
+                  />
+                );
+              })}
+            </GoogleMapReact>
+          </div>
+        ) : (
+          false
+        )}
       </div>
      
     );
@@ -50,4 +62,3 @@ class App extends Component {
 }
 
 export default App;
-

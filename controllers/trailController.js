@@ -28,5 +28,20 @@ module.exports = {
       .catch(err => {
         res.status(422).json(err);
       });
+  },
+  getTopTrails: function(req, res) {
+    db.Trail.find({})
+      .then(data => {
+          var topArr = []
+          data.forEach(trail=>{
+            if(trail.stars >= 4.2 && trail.starVotes >6){
+              topArr.push(trail)
+            }
+          })
+          res.json(topArr)
+      })
+      .catch(err => {
+        res.status(422).json(err);
+      });
   }
 };
