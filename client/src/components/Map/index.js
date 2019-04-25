@@ -3,8 +3,6 @@ import GoogleMapReact from "google-map-react";
 import API from "../../utils/api";
 import Marker from "../Marker";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 class App extends Component {
   state = {
     trails: [],

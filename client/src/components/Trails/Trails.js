@@ -1,4 +1,4 @@
-import  React, { Component } from "react";
+import React, { Component } from "react";
 import { Box, Row, Col } from "@smooth-ui/core-sc";
 import API from "../../utils/api";
 import * as Styled from "./Trails.style";
@@ -34,14 +34,24 @@ class Trails extends Component {
                   <Styled.SectionHeading as="h1">
                     Trails:&nbsp;
                     <span role="img" aria-label="Thunderbolt emoji">
-                      {this.state.trails.map(trail=>{
-                        return (
-                          <div>
-                        <h4>{trail.name}</h4>
-                        <img height="200px" width="200px" src={trail.imgMedium}></img>
-                        </div>
-                          )
-                      })}
+                      <ul>
+                        {this.state.trails.map(trail => {
+                          return (
+                            <li key={trail._id}>
+                              <img
+                                key={trail.name}
+                                alt-text={trail.name}
+                                height="200px"
+                                width="200px"
+                                src={trail.imgMedium}
+                              />
+                              <a key={trail.id} href={trail.url}>
+                                {trail.name}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </span>
                   </Styled.SectionHeading>
                   <Styled.Paragraph />

@@ -94,7 +94,7 @@ const Home = () => (
           position="relative"
           mb={15}
         >
-        <div class="fb-group" data-href="https://www.facebook.com/groups/232389966892330/" data-width="400" data-show-social-context="true" data-show-metadata="false"></div>
+        <div className="fb-group" data-href="https://www.facebook.com/groups/232389966892330/" data-width="400" data-show-social-context="true" data-show-metadata="false"></div>
         </Box>
 
       </Col>
