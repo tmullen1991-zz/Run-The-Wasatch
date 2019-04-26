@@ -10,7 +10,6 @@ mongoose.connect(
 
 db.Trail.remove({})
   .then(() => db.Trail.insertMany(list))
-
   .then(() => {
     console.log("db Created");
     process.exit(0);
