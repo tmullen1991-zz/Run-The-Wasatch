@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react/addons';
+import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import {boxStyle, mouseHover} from './hover_styles.js';
 
@@ -13,9 +13,7 @@ export default class Hoverable extends Component {
 
   shouldComponentUpdate = shouldPureComponentUpdate;
 
-  constructor(props) {
-    super(props);
-  }
+ 
 
   render() {
     const style = this.props.hover ? mouseHover : boxStyle;
