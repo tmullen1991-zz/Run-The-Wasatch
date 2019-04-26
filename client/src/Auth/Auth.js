@@ -7,7 +7,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'dev-l86anlve.auth0.com',
     clientID: '6hVGnEVgK8ehIbSUeL9RhW799OltrSaR',
-    redirectUri: 'https://run-the-wasatch.herokuapp.com/callback'||'http://localhost:3000/callback',
+    redirectUri: 'http://localhost:3000/callback',
     responseType: 'token id_token',
     scope: 'openid'
   });
