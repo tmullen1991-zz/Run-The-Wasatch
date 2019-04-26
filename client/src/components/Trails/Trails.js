@@ -5,7 +5,8 @@ import * as Styled from "./Trails.style";
 
 class Trails extends Component {
   state = {
-    trails: []
+    trails: [],
+    currentInfo: []
   };
   componentDidMount() {
     this.loadTopTrails();
@@ -14,10 +15,12 @@ class Trails extends Component {
   loadTopTrails = () => {
     API.loadTopTrails()
       .then(res => {
-        this.setState({ trails: res.data });
+        this.setState({ trails: res.data.trails });
+        console.log(this.state.trails)
       })
       .catch(err => console.log(err));
   };
+
   render() {
     return (
       <div>
@@ -37,10 +40,10 @@ class Trails extends Component {
                       <ul>
                         {this.state.trails.map(trail => {
                           return (
-                            <li key={trail._id}>
+                            <li key={trail.id}>
                               <img
                                 key={trail.name}
-                                alt-text={trail.name}
+                                alt={trail.name}
                                 height="200px"
                                 width="200px"
                                 src={trail.imgMedium}
