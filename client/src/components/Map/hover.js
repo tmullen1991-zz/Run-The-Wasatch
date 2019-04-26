@@ -13,7 +13,9 @@ export default class Hoverable extends Component {
 
   shouldComponentUpdate = shouldPureComponentUpdate;
 
- 
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     const style = this.props.hover ? mouseHover : boxStyle;
