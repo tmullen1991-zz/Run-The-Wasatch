@@ -3,6 +3,7 @@ import GoogleMapReact from "google-map-react";
 import API from "../../utils/api";
 import Marker from "../Marker";
 //import Hoverable from "./hover"
+//import K_SIZE from "./hover_styles"
 
 class App extends Component {
   state = {
