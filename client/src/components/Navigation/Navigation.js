@@ -45,6 +45,13 @@ const Navigation = ({ location }) => (
           </Link>
         </li>
         <li>
+          <Link to="/" aria-label="Home page">
+            <span className="nav-link_content" tabIndex="-1">
+              Home
+            </span>
+          </Link>
+        </li>
+        <li>
           <Link to="/" onClick={auth.logout} aria-label="Trails page">
             <span className="nav-link_content" tabIndex="-1">
               Logout
