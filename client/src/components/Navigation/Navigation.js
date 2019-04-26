@@ -2,10 +2,10 @@ import React from 'react';
 import { Box } from '@smooth-ui/core-sc';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-
+import Auth from "../../Auth/Auth.js";
 //import { Logo } from '../index';
 import * as Styled from './Navigation.style';
-
+const auth = new Auth();
 const Navigation = ({ location }) => (
   <Box
     width="100%"
@@ -61,6 +61,19 @@ const Navigation = ({ location }) => (
               tabIndex="-1"
             >
               Map
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={auth.logout}
+            aria-label="Trails page"
+          >
+            <span
+              className="nav-link_content"
+              tabIndex="-1"
+            >
+              Logout
             </span>
           </Link>
         </li>

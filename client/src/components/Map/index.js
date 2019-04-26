@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import API from "../../utils/api";
 import Marker from "../Marker";
+//import Hoverable from "./hover"
 
 class App extends Component {
   state = {
