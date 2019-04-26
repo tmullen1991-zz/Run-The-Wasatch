@@ -21,7 +21,7 @@ const boxStyle = {
 };
 
 const mouseHover = {
-  ...style,
+  ...boxStyle,
   border: '5px solid #3f51b5',
   color: '#f44336'
 };
