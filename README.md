@@ -1,11 +1,19 @@
-Objective: create an for University of Utah Coding Bootcamp Project 3.
+# Run-The-Wasatch Trails App
+
+### Purpose
+
+Run-The-Wasatch is an app created for the Wasatch Mountain Wranglers Facebook group that is an easy to use trailhead finder. The app is meant to be used as an easy tool for palnning runs and offer a refference for current trail conditions. Check out the app here! https://run-the-wasatch.herokuapp.com.
+
+### About the App
+
+The app is made in react and features, auth0 authentication with google login, over 400 trailheads locations and information in the Wasatch front and surrounding areas, and live updates from The Trail Project API. Future features include weather and live updated trail condition from The Trai Project and possible social boards to show upcomig Wasatch Wrangler events posted on Facebook!
+
+### Technologies Used
+
+The app is made in react and deployed via heroku. Other technologies include: express, auth0, mongoDB using mLab for heroku and mongoose, axios, concurrently, nodemon, bootstrap, and Google maps using google-maps-react npm pacakge manager. 
+
+### About the Team
 
 Contributors: Tom Mullen, Abram Wingle and Adam Jacobs.
 
-History:
-
-Hat tip to:
-
-Technologies used:
-
-Functionality: Deployed through Heroku:
+![Alt Text](readme-picture/readmepic.png)
