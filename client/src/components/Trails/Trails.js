@@ -16,7 +16,7 @@ class Trails extends Component {
     API.loadTopTrails()
       .then(res => {
         this.setState({ trails: res.data.trails });
-        console.log(this.state.trails)
+        console.log(this.state.trails);
       })
       .catch(err => console.log(err));
   };
@@ -48,7 +48,11 @@ class Trails extends Component {
                                 width="200px"
                                 src={trail.imgMedium}
                               />
-                              <a key={trail.id} href={trail.url}>
+                              <a
+                                target="_blank"
+                                key={trail.id}
+                                href={trail.url}
+                              >
                                 {trail.name}
                               </a>
                             </li>
