@@ -5,7 +5,8 @@ import * as Styled from "./Trails.style";
 
 class Trails extends Component {
   state = {
-    trails: []
+    trails: [],
+    currentInfo: []
   };
   componentDidMount() {
     this.loadTopTrails();
@@ -14,10 +15,12 @@ class Trails extends Component {
   loadTopTrails = () => {
     API.loadTopTrails()
       .then(res => {
-        this.setState({ trails: res.data });
+        this.setState({ trails: res.data.trails });
+        console.log(this.state.trails);
       })
       .catch(err => console.log(err));
   };
+
   render() {
     return (
         <Row
@@ -31,7 +34,9 @@ class Trails extends Component {
               <Row mb={{ xs: "30px", sm: "40px", lg: "50px", xl: "60px" }}>
                 <Col>
                   <Styled.SectionHeading as="h1">
+
                     TRAILS AND CONDITIONS:&nbsp;
+
                   </Styled.SectionHeading>
                   <Styled.Paragraph>
                     <ul>

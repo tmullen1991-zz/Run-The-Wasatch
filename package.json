@@ -22,10 +22,7 @@
     "url": "https://github.com/tmullen1991/React-Search-App/issues"
   },
   "homepage": "https://github.com/tmullen1991/React-Search-App#readme",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.11"
-  },
+  "devDependencies": {},
   "dependencies": {
     "auth0-js": "^9.10.2",
     "axios": "^0.18.0",

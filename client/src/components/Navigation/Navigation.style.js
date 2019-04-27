@@ -102,7 +102,8 @@ export const NavList = styled.ul`
     :nth-child(1),
     :nth-child(2),
     :nth-child(3),
-    :nth-child(4){
+    :nth-child(4),
+    :nth-child(5){
       a {
         :hover {
           color: turquoise;
