@@ -1,33 +1,58 @@
 import React, { Component } from "react";
-
-const style = {
-  // initially any map object has left top corner at lat lng coordinates
-  // it's on you to set object origin to 0,0 coordinates
-  position: "absolute",
-  width: 300,
-  height: 50,
-
-  border: "3px solid black",
-  backgroundColor: "white",
-  textAlign: "center",
-  color: "#3f51b5",
-  fontSize: 16,
-  fontWeight: "bold",
-  padding: 4
-};
+import "./style.css";
 
 export default class InfoBox extends Component {
   render() {
     return (
-      <div style={style}>
-        <span>
-          <a href={this.props.url}>{this.props.name}</a>
-        </span>
-        <span>
+      <div className="tool-tip">
+        <div className="inner-text">
+          <p>{this.props.name}</p>
           <p>
-            Difficulty: {this.props.difficulty}, Length: {this.props.length}
+            Rated: {this.props.rating}/5 ({this.props.votes} votes)
+            {this.props.difficulty === "green" ||
+            this.props.difficulty === "greenBlue" ? (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/greenBlk.svg"
+                hspace="5"
+              /> 
+            ) : this.props.difficulty === "greenBlue" ? (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/greenBlueBlk.svg"
+                hspace="5"
+              /> 
+            ) : this.props.difficulty === "blue" ? (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/blueBlk.svg"
+                hspace="5"
+              /> 
+            ) : this.props.difficulty === "blueBlack" ? (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/blueBlackBlk.svg"
+                hspace="5"
+              /> 
+            ) : this.props.difficulty === "black" ? (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/blackBlk.svg"
+                hspace="5"
+              /> 
+            ) : (
+              <img
+                alt="green"
+                src="https://cdn.apstatic.com/img/diff/dblackBlk.svg"
+                hspace="5"
+              /> 
+            )}
+             {this.props.length} Mi
           </p>
-        </span>
+          <p>
+            <a href={this.props.url}>Link to Trail Project</a>
+          </p>
+        </div>
       </div>
     );
   }
