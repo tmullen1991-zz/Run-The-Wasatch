@@ -50,7 +50,7 @@ export default class InfoBox extends Component {
              {this.props.length} Mi
           </p>
           <p>
-            <a href={this.props.url}>Link to Trail Project</a>
+            <a target="_blank" href={this.props.url}>Link to Trail Project</a>
           </p>
         </div>
       </div>
