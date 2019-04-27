@@ -28,16 +28,22 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  _onClick = (trail) => {
+  _onClick = trail => {
     return (
       this.setState({
         currentTrail: {
-          trail
+          trail 
         }
       }),
       this.setState({ showInfo: true })
     );
   };
+
+  _onClose = ()=>{
+    return(
+    this.setState({ showInfo: false })
+    )
+  }
 
   render() {
     return (
@@ -56,11 +62,7 @@ class App extends Component {
               {this.state.trails.map(trail => {
                 return (
                   <Marker
-                    onClick={() =>
-                      this._onClick(
-                        trail
-                      )
-                    }
+                    onClick={() => this._onClick(trail)}
                     key={trail.id}
                     lat={trail.latitude}
                     lng={trail.longitude}
@@ -75,6 +77,8 @@ class App extends Component {
                   lat={this.state.currentTrail.trail.latitude}
                   lng={this.state.currentTrail.trail.longitude}
                   url={this.state.currentTrail.trail.url}
+                  rating={this.state.currentTrail.trail.stars}
+                  votes={this.state.currentTrail.trail.starVotes}
                   name={this.state.currentTrail.trail.name}
                   difficulty={this.state.currentTrail.trail.difficulty}
                   length={this.state.currentTrail.trail.length}
