@@ -26,9 +26,11 @@ const About = () => (
       >
         <Row
           mb={{ xs: "30px", sm: "40px", lg: "50px", xl: "60px" }}
+          backgroundColor="#191919"
         >
           <Col>
             <Styled.SectionHeading
+            white
               as="h1"
             >
               Team RunTheWasatch:&nbsp;
@@ -39,11 +41,14 @@ const About = () => (
                 ⚡
               </span>
             </Styled.SectionHeading>
-            <Styled.Paragraph>
+            
+            <Styled.Paragraph
+              white
+              >
 
-              Adam: Team Lead / Frontend
-              Tom: Backend / Maps / Dev Ops
-              Abram: Authentication
+              Adam: Team Lead / Frontend |
+              Tom: Backend / Maps / Dev Ops |
+              Abram: Authentication / Presentation
               
             </Styled.Paragraph>
           </Col>
@@ -52,4 +57,5 @@ const About = () => (
     </Col>
   </Row>
 );
+
 export default About;

@@ -23,7 +23,6 @@ class Trails extends Component {
 
   render() {
     return (
-      <div>
         <Row
           mx={0}
           px={15}
@@ -35,40 +34,38 @@ class Trails extends Component {
               <Row mb={{ xs: "30px", sm: "40px", lg: "50px", xl: "60px" }}>
                 <Col>
                   <Styled.SectionHeading as="h1">
-                    Trails:&nbsp;
-                    <span role="img" aria-label="Thunderbolt emoji">
-                      <ul>
-                        {this.state.trails.map(trail => {
-                          return (
-                            <li key={trail.id}>
-                              <img
-                                key={trail.name}
-                                alt={trail.name}
-                                height="200px"
-                                width="200px"
-                                src={trail.imgMedium}
-                              />
-                              <a
-                                target="_blank"
-                                key={trail.id}
-                                href={trail.url}
-                              >
-                                {trail.name}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </span>
+
+                    TRAILS AND CONDITIONS:&nbsp;
+
                   </Styled.SectionHeading>
-                  <Styled.Paragraph />
+                  <Styled.Paragraph>
+                    <ul>
+                      {this.state.trails.map(trail => {
+                        return (
+                          <li key={trail._id}>
+                            <img
+                              key={trail.name}
+                              alt-text={trail.name}
+                              height="150px"
+                              width="150px"
+                              src={trail.imgMedium}
+                            />
+                            <a key={trail.id} href={trail.url}>
+                              {trail.name}
+                              </a>
+                                
+                          <p>Condition Details: {trail.conditionDetails}</p>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    </Styled.Paragraph>
                 </Col>
               </Row>
             </Box>
           </Col>
         </Row>
-      </div>
-    );
-  }
-}
-export default Trails;
+        );
+      }
+    }
+    export default Trails;
