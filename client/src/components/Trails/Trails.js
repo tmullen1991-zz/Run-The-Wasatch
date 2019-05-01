@@ -31,13 +31,31 @@ class Trails extends Component {
         >
           <Col px={0} xs={12} sm={10} osm={1} lg={8} olg={2} my={0} mx="auto">
             <Box as="header" role="banner">
-              <Row mb={{ xs: "30px", sm: "40px", lg: "50px", xl: "60px" }}>
-                <Col>
+              <Row mb={{ xs: "20px", sm: "30px", lg: "40px", xl: "50px" }}>
+                <Col
+                xs={12}>
                   <Styled.SectionHeading as="h1">
 
                     TRAILS AND CONDITIONS:&nbsp;
 
                   </Styled.SectionHeading>
+                  </Col>
+        </Row>
+      </Box>
+      <Box
+        as="main"
+        role="main"
+      >
+        <Row
+          mb={{xs:"30px", sm:"40px", lg:"50px", xl:"80px"}}
+        >
+          <Col
+            xs={12}
+            mb={{xs:"15px", xl:"0px"}}
+            xl={6}
+            display= "flex"
+            alignItems= "flex-end"
+          >
                   <Styled.Paragraph>
                     <ul>
                       {this.state.trails.map(trail => {
@@ -62,6 +80,7 @@ class Trails extends Component {
                     </Styled.Paragraph>
                 </Col>
               </Row>
+              <Styled.Hr />
             </Box>
           </Col>
         </Row>

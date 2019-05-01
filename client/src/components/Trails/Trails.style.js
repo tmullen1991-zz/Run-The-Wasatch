@@ -53,3 +53,16 @@ export const Paragraph = styled.p`
     }
   }
 `;
+
+export const Hr = styled.hr`
+  margin-bottom: 30px;
+  @media (min-width: 576px) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: 992px) {
+    margin-bottom: 50px;
+  }
+  @media (min-width: 1200px) {
+    display: none;
+  }
+`;
