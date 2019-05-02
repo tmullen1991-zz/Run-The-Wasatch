@@ -60,7 +60,7 @@ class Trails extends Component {
                     <ul>
                       {this.state.trails.map(trail => {
                         return (
-                          <li key={trail._id}>
+                          <ol key={trail._id}>
                             <img
                               key={trail.name}
                               alt-text={trail.name}
@@ -73,7 +73,7 @@ class Trails extends Component {
                               </a>
                                 
                           <p>Condition Details: {trail.conditionDetails}</p>
-                          </li>
+                          </ol>
                         );
                       })}
                     </ul>
