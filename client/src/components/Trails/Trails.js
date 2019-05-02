@@ -40,22 +40,26 @@ class Trails extends Component {
                       <ul>
                         {this.state.trails.map(trail => {
                           return (
-                            <li key={trail.id}>
-                              <img
-                                key={trail.name}
-                                alt={trail.name}
-                                height="200px"
-                                width="200px"
-                                src={trail.imgMedium}
-                              />
-                              <a
-                                target="_blank"
-                                key={trail.id}
-                                href={trail.url}
-                              >
-                                {trail.name}
-                              </a>
-                            </li>
+                            <span>
+                              <ol key={trail.id}>
+                              <span>
+                                <img
+                                  key={trail.name}
+                                  alt={trail.name}
+                                  height="200px"
+                                  width="200px"
+                                  src={trail.imgMedium}
+                                />
+                                <a
+                                  target="_blank"
+                                  key={trail.id}
+                                  href={trail.url}
+                                >
+                                  {trail.name}
+                                </a>
+                                </span>
+                              </ol>
+                            </span>
                           );
                         })}
                       </ul>
