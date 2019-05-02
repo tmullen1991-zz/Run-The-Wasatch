@@ -35,9 +35,35 @@ class Trails extends Component {
                 <Col
                 xs={12}>
                   <Styled.SectionHeading as="h1">
-
-                    TRAILS AND CONDITIONS:&nbsp;
-
+                    Trails:&nbsp;
+                    <span role="img" aria-label="Thunderbolt emoji">
+                      <ul>
+                        {this.state.trails.map(trail => {
+                          return (
+                            <span>
+                              <ol key={trail.id}>
+                              <span>
+                                <img
+                                  key={trail.name}
+                                  alt={trail.name}
+                                  height="200px"
+                                  width="200px"
+                                  src={trail.imgMedium}
+                                />
+                                <a
+                                  target="_blank"
+                                  key={trail.id}
+                                  href={trail.url}
+                                >
+                                  {trail.name}
+                                </a>
+                                </span>
+                              </ol>
+                            </span>
+                          );
+                        })}
+                      </ul>
+                    </span>
                   </Styled.SectionHeading>
                   </Col>
         </Row>
