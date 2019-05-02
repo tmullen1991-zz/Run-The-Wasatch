@@ -2,6 +2,9 @@ import React from 'react';
 import { Box, Row, Col } from '@smooth-ui/core-sc';
 
 import * as Styled from './About.style';
+import Abram from '../../img/Abram.PNG';
+import Adam from '../../img/Adam.PNG';
+import Tom from '../../img/Tom.PNG';
 
 const About = () => (
   <Row
@@ -25,31 +28,78 @@ const About = () => (
         role="banner"
       >
         <Row
-          mb={{ xs: "30px", sm: "40px", lg: "50px", xl: "60px" }}
+          mb={{ xs: "20px", sm: "30px", lg: "40px", xl: "50px" }}
         >
-          <Col>
+          <Col
+          xs={18}>
             <Styled.SectionHeading
               as="h1"
             >
               Team RunTheWasatch:&nbsp;
-              <span
-                role="img"
-                aria-label="Thunderbolt emoji"
-              >
-                ⚡
-              </span>
             </Styled.SectionHeading>
+            <br />
+          </Col>
+          <Col
+            xs={12}
+            md={4}
+          >
+          <Styled.Paragraph>
+          Run-The-Wasatch is an app created for the Wasatch Mountain Wranglers Facebook group that is an easy to use trailhead finder. The app is meant to be used as an easy tool for planning runs and offer a reference for current trail conditions.
+          </Styled.Paragraph>
+          <br />
             <Styled.Paragraph>
-
-              Adam: Team Lead / Frontend
-              Tom: Backend / Maps / Dev Ops
               Abram: Authentication
-              
-            </Styled.Paragraph>
+              </Styled.Paragraph>
+            <img
+              src={Abram}
+              alt="Authentication"
+              style={
+                {
+                  display: 'block',
+                  width: '70%',
+                  maxWidth: '400px',
+                  margin: '0 auto'
+                }
+              }
+            />
+            <br />
+            <Styled.Paragraph>
+              Adam: Team Lead | Frontend
+              </Styled.Paragraph>
+            <img
+              src={Adam}
+              alt="Team Lead | Frontend"
+              style={
+                {
+                  display: 'block',
+                  width: '70%',
+                  maxWidth: '400px',
+                  margin: '0 auto'
+                }
+              }
+            />
+            <br />
+            <Styled.Paragraph>
+              Tom: Backend | Map | Dev Ops
+              </Styled.Paragraph>
+            <img
+              src={Tom}
+              alt="Backend | Maps | Dev Ops"
+              style={
+                {
+                  display: 'block',
+                  width: '70%',
+                  maxWidth: '400px',
+                  margin: '0 auto'
+                }
+              }
+            />
+
           </Col>
         </Row>
       </Box>
     </Col>
   </Row>
 );
+
 export default About;
